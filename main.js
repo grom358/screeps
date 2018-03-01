@@ -18,12 +18,9 @@ const creepRoles = {
     remoteBuilder: require('creepRole.remoteBuilder'),
     remoteUpgrader: require('creepRole.remoteUpgrader'),
     refiller: require('creepRole.refiller'),
-    energyLoader: require('creepRole.energyLoader'),
-    energyUnloader: require('creepRole.energyUnloader'),
     transfer: require('creepRole.transfer'),
     linkLoader: require('creepRole.linkLoader'),
     linkUnloader: require('creepRole.linkUnloader'),
-    extractor: require('creepRole.extractor'),
     test: require('creepRole.test'),
     healer: require('creepRole.healer'),
     bait: require('creepRole.bait'),
@@ -38,7 +35,6 @@ const creepRoles = {
     thief: require('creepRole.thief'),
     mineralMiner: require('creepRole.mineralMiner'),
     courier: require('creepRole.courier'),
-    megaUpgrader: require('creepRole.megaUpgrader'),
 };
 
 const roomControllers = {

@@ -8,10 +8,6 @@ function parts(energy) {
     return [WORK, WORK, WORK, WORK, WORK,
         CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE,
         CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE,
-        /*
-        CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE,
-        CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE,
-        */
         MOVE, MOVE, MOVE, MOVE, MOVE];
 }
 
@@ -59,7 +55,6 @@ function run(creep) {
         }
         case STATE_COLLECT: {
             if (_.sum(creep.carry) === creep.carryCapacity) {
-                creep.say('🚧 build');
                 creep.memory.state = STATE_BUILD;
                 // Clear the collection point as we wish to reselect collection target for next collection.
                 delete creep.memory.collectFrom;
@@ -93,7 +88,6 @@ function run(creep) {
         }
         case STATE_BUILD: {
             if (creep.carry.energy === 0) {
-                creep.say('🔄 collect');
                 creep.memory.state = STATE_COLLECT;
                 run(creep);
                 return;

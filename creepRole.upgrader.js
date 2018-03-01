@@ -54,7 +54,6 @@ function run(creep) {
         case STATE_COLLECTING: {
             if (_.sum(creep.carry) === creep.carryCapacity) {
                 creep.memory.state = STATE_UPGRADING;
-                //creep.say('⚡ upgrade');
                 run(creep);
                 return;
             }
@@ -81,7 +80,6 @@ function run(creep) {
 
             if (creep.carry.energy === 0) {
                 creep.memory.state = STATE_COLLECTING;
-                //creep.say('🔄 collect');
                 run(creep);
                 return;
             }

@@ -33,11 +33,6 @@ function run(creep) {
         return;
     }
 
-    /*
-    let hostileCreep = creep.getTarget(
-        () => creep.pos.findClosestByPath(FIND_HOSTILE_CREEPS)
-    );
-    */
     let hostileCreep = creep.pos.findClosestByPath(FIND_HOSTILE_CREEPS, {
         filter: (c) => c.getActiveBodyparts(ATTACK) > 0 || c.getActiveBodyparts(CLAIM) > 0
     });

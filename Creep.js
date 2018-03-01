@@ -24,7 +24,6 @@ Creep.prototype.collectEnergy = function (allowStorage = false) {
                     });
                     assignedCreeps.forEach((creep) => resource.available -= (creep.carryCapacity - _.sum(creep.carry)))
                 }
-                //return _.max(_.filter(resources, (r) => r.available > 0), 'available');
                 return this.pos.findClosestByPath(_.filter(resources, (r) => r.available > 0));
             },
             validator: (resource) => resource.amount >= 50,
@@ -90,7 +89,7 @@ Creep.prototype.repairBuilding = function () {
                 filter: (s) => (s.hits && s.hits < 250) ||
                     ((s.structureType === STRUCTURE_RAMPART || s.structureType === STRUCTURE_WALL) && s.hits < 10000)
             }),
-        (s) => s.hits < 250 || (s.structureType === STRUCTURE_RAMPART && s.hits < 10000),
+        (s) => s.hits < 250 || ((s.structureType === STRUCTURE_RAMPART || s.structureType === STRUCTURE_WALL) && s.hits < 10000),
         'emergencyRepairId',
     );
     if (!structure) {

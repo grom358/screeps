@@ -36,7 +36,6 @@ function run(creep) {
     switch (creep.memory.state) {
         case STATE_COLLECT: {
             if (_.sum(creep.carry) === creep.carryCapacity) {
-                creep.say('🚧 build');
                 creep.memory.state = STATE_BUILD;
                 // Clear the collection point as we wish to reselect collection target for next collection.
                 delete creep.memory.collectFrom;
@@ -58,7 +57,6 @@ function run(creep) {
         }
         case STATE_BUILD: {
             if (creep.carry.energy === 0) {
-                creep.say('🔄 collect');
                 creep.memory.state = STATE_COLLECT;
                 delete creep.memory.repairId;
                 run(creep);

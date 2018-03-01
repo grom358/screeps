@@ -86,7 +86,7 @@ module.exports = {
             if (settings.parts) {
                 parts = JSON.parse(JSON.stringify(settings.parts));
             } else {
-                parts = creepRoles[opts.memory.role].parts(energy, room);
+                parts = creepRoles[opts.memory.role].parts(energy, spawn);
             }
 
             let generation = false;

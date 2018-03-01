@@ -6,9 +6,6 @@ const STATE_COLLECT = 3;
 
 function parts(energy) {
     return [WORK, MOVE, WORK, MOVE, WORK, MOVE, WORK, MOVE, WORK, MOVE,
-        /*
-        CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE,
-        CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE,*/
         CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE,
         CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, ];
 }
@@ -55,7 +52,6 @@ function run(creep) {
         }
         case STATE_COLLECT: {
             if (_.sum(creep.carry) === creep.carryCapacity) {
-                creep.say('⚡ upgrade');
                 creep.memory.state = STATE_UPGRADING;
                 // Clear the collection point as we wish to reselect collection target for next collection.
                 delete creep.memory.collectFrom;

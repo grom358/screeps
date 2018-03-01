@@ -22,7 +22,6 @@ function run(creep) {
     switch (creep.memory.state) {
         case STATE_COLLECT: {
             if (_.sum(creep.carry) === creep.carryCapacity) {
-                //creep.say('⚡ deliver');
                 creep.memory.state = STATE_DELIVER;
                 run(creep);
                 return;
@@ -46,7 +45,6 @@ function run(creep) {
         }
         case STATE_DELIVER: {
             if (_.sum(creep.carry) === 0) {
-                //creep.say('🔄 collect');
                 creep.memory.state = STATE_COLLECT;
                 run(creep);
                 return;
