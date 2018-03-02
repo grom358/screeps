@@ -74,11 +74,11 @@ function run(creep) {
                 },
                 upgrader: {
                     selector: () => {
+                        if (!creep.room.controller) {
+                            return null;
+                        }
                         // If controller has a container or storage then we don't deliver to upgraders.
-                        let containers = creep.room.controller.pos.findInRange(FIND_STRUCTURES, 3, {
-                            filter: (s) => s.structureType === STRUCTURE_CONTAINER || s.structureType === STRUCTURE_STORAGE
-                        });
-                        if (containers.length > 0) {
+                        if (creep.room.findControllerContainer()) {
                             return null;
                         }
                         // Otherwise deliver to upgrader near controller
