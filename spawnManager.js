@@ -13,9 +13,7 @@ function calculateCost(parts) {
 }
 
 module.exports = {
-    spawnCreeps: function (room, spawns, spawnSettings, creepRoles) {
-        let spawnQueue = [];
-
+    spawnCreeps: function (creepRoles, room, spawns, spawnSettings, spawnQueue = []) {
         // Fill queue based on spawn settings.
         for (let ruleName in spawnSettings) {
             let rule = spawnSettings[ruleName];

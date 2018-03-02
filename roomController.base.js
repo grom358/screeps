@@ -87,6 +87,7 @@ module.exports = {
         // Spawn creeps.
         if (availableSpawns.length > 0) {
             let spawnSettings = JSON.parse(JSON.stringify(room.memory.spawnSettings));
+            let spawnQueue = [];
 
             let hostileCreeps = room.find(FIND_HOSTILE_CREEPS);
             spawnSettings.defender.max = hostileCreeps.length || spawnSettings.defender.max;
@@ -151,7 +152,7 @@ module.exports = {
                 }
             }
 
-            spawnManager.spawnCreeps(room, availableSpawns, spawnSettings, creepRoles);
+            spawnManager.spawnCreeps(creepRoles, room, availableSpawns, spawnSettings, spawnQueue);
         }
 
         // Control towers.
