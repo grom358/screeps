@@ -82,6 +82,12 @@ module.exports = {
             if (!settings.energyStructures) {
                 opts.energyStructures = settings.energyStructures;
             }
+
+            if (!(opts.memory.role in creepRoles)) {
+                console.log('Role not found ' + opts.memory.role);
+                continue;
+            }
+
             let parts;
             if (settings.parts) {
                 parts = JSON.parse(JSON.stringify(settings.parts));
