@@ -4,7 +4,13 @@ const STATE_COLLECT = 1;
 const STATE_DELIVER = 2;
 
 function parts(energy) {
-    return [CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE];
+    return [
+        CARRY, MOVE, CARRY, MOVE,
+        CARRY, MOVE, CARRY, MOVE,
+        CARRY, MOVE, CARRY, MOVE,
+        CARRY, MOVE, CARRY, MOVE,
+        CARRY, MOVE, CARRY, MOVE,
+    ];
 }
 
 function init(creep) {
