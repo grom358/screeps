@@ -65,7 +65,7 @@ Creep.prototype.buildSite = function () {
             _.max(this.room.findConstructionSitesByPriority([
                 STRUCTURE_SPAWN, STRUCTURE_EXTENSION, STRUCTURE_TOWER,
                 STRUCTURE_STORAGE, STRUCTURE_CONTAINER, STRUCTURE_TERMINAL,
-                STRUCTURE_LINK, STRUCTURE_LAB, STRUCTURE_EXTRACTOR,
+                STRUCTURE_LINK, STRUCTURE_LAB, STRUCTURE_EXTRACTOR, STRUCTURE_OBSERVER, STRUCTURE_NUKER,
                 STRUCTURE_ROAD,
                 STRUCTURE_RAMPART, STRUCTURE_WALL
             ]), (s) => s.progress),
@@ -98,7 +98,7 @@ Creep.prototype.repairBuilding = function () {
                 _.min(this.room.findRepairByPriority([
                     STRUCTURE_SPAWN, STRUCTURE_EXTENSION, STRUCTURE_TOWER,
                     STRUCTURE_STORAGE, STRUCTURE_CONTAINER, STRUCTURE_TERMINAL,
-                    STRUCTURE_LINK, STRUCTURE_LAB, STRUCTURE_EXTRACTOR,
+                    STRUCTURE_LINK, STRUCTURE_LAB, STRUCTURE_EXTRACTOR, STRUCTURE_OBSERVER,  STRUCTURE_NUKER,
                     STRUCTURE_ROAD,
                     STRUCTURE_RAMPART, STRUCTURE_WALL
                 ], wallMax), (s) => s.hits),
