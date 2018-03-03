@@ -36,6 +36,7 @@ const creepRoles = {
     mineralMiner: require('creepRole.mineralMiner'),
     courier: require('creepRole.courier'),
     labUnloader: require('creepRole.labUnloader'),
+    rampartMelee: require('creepRole.rampartMelee'),
 };
 
 const roomControllers = {
