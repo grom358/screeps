@@ -36,7 +36,7 @@ function run(creep) {
             if (creep.memory.labs) {
                 labs = _.filter(labs, (lab) => creep.memory.labs.indexOf(lab.id) >= 0);
             }
-            let lab = labs.length ? _.min(labs, (lab) => lab.mineralAmount) : undefined;
+            let lab = labs.length ? _.max(labs, (lab) => lab.mineralAmount) : undefined;
             if (!lab && _.sum(creep.carry) > 0) {
                 creep.memory.state = STATE_DELIVER;
                 run(creep);
