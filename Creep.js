@@ -101,7 +101,7 @@ Creep.prototype.repairBuilding = function () {
                     STRUCTURE_LINK, STRUCTURE_LAB, STRUCTURE_EXTRACTOR, STRUCTURE_OBSERVER,  STRUCTURE_NUKER,
                     STRUCTURE_ROAD,
                     STRUCTURE_RAMPART, STRUCTURE_WALL
-                ], wallMax), (s) => s.hits),
+                ], wallMax, 0.9), (s) => s.hits),
             (structure) => {
                 if (structure.structureType === STRUCTURE_RAMPART || structure.structureType === STRUCTURE_WALL) {
                     return structure.hits < wallMax;
